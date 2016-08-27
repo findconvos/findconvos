@@ -1,0 +1,56 @@
+var _Elements = {"elements": {
+	"Home Sections": [
+		{"url": "elements/home-1-image-bg.html", "height": 900, "thumbnail": "thumbnails/home-1-image-bg.png"},
+		{"url": "elements/home-2-image-bg.html", "height": 900, "thumbnail": "thumbnails/home-2-image-bg.png"},
+		{"url": "elements/home-1-transparent-color-bg.html", "height": 900, "thumbnail": "thumbnails/home-1-transparent-color-bg.png"},
+		{"url": "elements/home-2-transparent-color-bg.html", "height": 900, "thumbnail": "thumbnails/home-2-transparent-color-bg.png"},
+		{"url": "elements/home-1-solid-color.html", "height": 900, "thumbnail": "thumbnails/home-1-solid-color.png"},
+		{"url": "elements/home-2-solid-color.html", "height": 900, "thumbnail": "thumbnails/home-2-solid-color.png"},
+		{"url": "elements/home-1-video-bg.html", "height": 900, "thumbnail": "thumbnails/home-1-video-bg.png"},
+		{"url": "elements/home-2-video-bg.html", "height": 900, "thumbnail": "thumbnails/home-2-video-bg.png"},
+	],
+
+	"Features": [
+		{"url": "elements/features-light.html", "height": 951, "thumbnail": "thumbnails/features-light.png"},
+		{"url": "elements/services-light.html", "height": 731, "thumbnail": "thumbnails/services-light.png"},
+		{"url": "elements/features-dark.html", "height": 951, "thumbnail": "thumbnails/features-dark.png"},
+		{"url": "elements/services-dark.html", "height": 731, "thumbnail": "thumbnails/services-dark.png"},
+	],
+
+	"App Briefs": [
+		{"url": "elements/app-brief-1-light.html", "height": 723, "thumbnail": "thumbnails/app-brief-1-light.png"},
+		{"url": "elements/app-brief-2-light.html", "height": 710, "thumbnail": "thumbnails/app-brief-2-light.png"},
+		{"url": "elements/app-brief-3-light.html", "height": 561, "thumbnail": "thumbnails/app-brief-3-light.png"},
+		{"url": "elements/app-brief-1-dark.html", "height": 723, "thumbnail": "thumbnails/app-brief-1-dark.png"},
+		{"url": "elements/app-brief-2-dark.html", "height": 710, "thumbnail": "thumbnails/app-brief-2-dark.png"},
+		{"url": "elements/app-brief-3-dark.html", "height": 561, "thumbnail": "thumbnails/app-brief-3-dark.png"},
+	],
+
+	"Screenshots": [
+		{"url": "elements/screenshots-light.html", "height": 886, "thumbnail": "thumbnails/screenshots-light.png", "sandbox": true, "loaderFunction": "screenShots"},
+		{"url": "elements/screenshots-dark.html", "height": 886, "thumbnail": "thumbnails/screenshots-dark.png", "sandbox": true, "loaderFunction": "screenShots"},
+	],
+
+	"Packages": [
+		{"url": "elements/packages-light.html", "height": 958, "thumbnail": "thumbnails/packages-light.png"},
+		{"url": "elements/packages-dark.html", "height": 958, "thumbnail": "thumbnails/packages-dark.png"},
+	],
+
+	"Testimonials": [
+		{"url": "elements/testimonials-image-bg.html", "height": 600, "thumbnail": "thumbnails/testimonials-image-bg.png", "sandbox": true, "loaderFunction": "feedbacks"},
+		{"url": "elements/testimonials-transparent-color-bg.html", "height": 600, "thumbnail": "thumbnails/testimonials-transparent-color-bg.png", "sandbox": true, "loaderFunction": "feedbacks"},
+		{"url": "elements/testimonials-solid-color.html", "height": 600, "thumbnail": "thumbnails/testimonials-solid-color.png", "sandbox": true, "loaderFunction": "feedbacks"},
+	],
+
+	"Downloads": [
+		{"url": "elements/download-image-bg.html", "height": 705, "thumbnail": "thumbnails/download-image-bg.png"},
+		{"url": "elements/download-transparent-color-bg.html", "height": 705, "thumbnail": "thumbnails/download-transparent-color-bg.png"},
+		{"url": "elements/download-solid-color.html", "height": 705, "thumbnail": "thumbnails/download-solid-color.png"},
+	],
+
+	"Footer": [
+		{"url": "elements/footer-light.html", "height": 848, "thumbnail": "thumbnails/footer-light.png"},
+		{"url": "elements/footer-dark.html", "height": 848, "thumbnail": "thumbnails/footer-dark.png"},
+	],
+	}
+}

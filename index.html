@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>KANE BUILDER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+    <link href="css/spectrum.css" rel="stylesheet">
+    <link href="css/chosen.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="images/favicon.ico"> 
+    
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <!-- kane icons assets -->
+    <!-- <link rel="stylesheet" href="assets/app-icons/styles.css"> -->
+    <link rel="stylesheet" href="assets/eleganticons/styles.css">
+    
+    <link href="js/redactor/redactor.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+  	<div class="menu" id="menu">
+		
+  		<div class="main" id="main">
+			  		  			
+  			<h3><span class="fui-list"></span> Blocks</h3>
+  			
+  			<ul id="elements">
+  				<li><a href="#" id="all">All Blocks</a></li>
+  			</ul>
+  			
+			<a href="#" class="toggle"><span class="fui-gear"></span></a>
+			
+  			<hr>
+  			
+  			<h3><span class="fui-windows"></span> Pages</h3>
+  			
+  			<ul id="pages">
+  				<li style="display: none;" id="newPageLI">
+  					<input type="text" value="index" name="page">
+  					<span class="pageButtons">
+  						<a href="" class="fileEdit"><span class="fui-new"></span></a>
+  						<a href="" class="fileDel"><span class="fui-cross"></span></a>
+  						<a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
+  					</span>
+  				</li>
+  				<li class="active">
+  					<a href="#page1">index</a>
+  					<span class="pageButtons">
+  						<a href="" class="fileEdit"><span class="fui-new"></span></a>
+  						<a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
+  					</span>
+  				</li>
+  			</ul>
+  	
+  			<div class="sideButtons clearfix">
+  				<a href="#" class="btn btn-primary btn-sm btn-embossed" id="addPage"><span class="fui-plus"></span> Add</a>
+  				<a href="#exportModal" data-toggle="modal" class="btn btn-info btn-sm btn-embossed disabled actionButtons"><span class="fui-export"></span> Export</a>
+  			</div>
+
+        <hr>
+
+        <!-- <h3><span class="fui-windows"></span> Export/Import</h3> -->
+
+        <a href="#projModal" id="projPage" data-toggle="modal" class="btn btn-info btn-embossed pull-a actiosnButtons projexp" style="width:80%;margin:0 10%;"><span class="fa fa-files-o" ></span> Export & Import</a>
+        <hr>
+  	
+  		</div><!-- /.main -->
+  	
+  		<div class="second" id="second">
+			
+			<a href="#" class="hideSecond" id="hideSecond"><span class="fui-arrow-left"></span> hide</a>
+  		
+  			<ul id="elements">
+  			
+  			</ul>
+  
+  		</div><!-- /.secondSide -->
+  	
+  	</div><!-- /.menu -->
+  
+    <div class="container">
+    	
+    	<header class="clearfix" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+    	
+    		<a href="#" id="clearScreen" class="btn btn-danger btn-embossed pull-right disabled actionButtons"><span class="fui-trash"></span> Empty Page</a>
+    	
+			<a href="#previewModal" id="preview" data-toggle="modal" class="btn btn-inverse btn-embossed pull-right disabled actionButtons" style="margin-right: 10px; display: none"><span class="fui-window"></span> Preview</a>
+		
+            <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-info btn-embossed pull-right disabled actionButtons"><span class="fui-export"></span> Export</a>
+
+         <a href="#styleSwitch" data-toggle="modal" class="btn btn-warning btn-embossed pull-right disabled actionButtons styleSwitch"><span class="fui-export"></span> Themes</a>
+
+			
+			<a href="#" id="savePage" class="btn btn-primary btn-embossed pull-right disabled actionButtons"><span class="fui-check"></span> <span class="bLabel">Nothing new to save</span></a>
+    	
+    		<div class="modes">
+    		
+    			<b>Building mode:</b>
+    			<label class="radio primary first">
+    				<input type="radio" name="mode" id="modeBlock" value="block" data-toggle="radio" disabled="" checked="">
+    			  	Elements
+    			</label>
+    			<label class="radio primary first">
+    				<input type="radio" name="mode" id="modeContent" value="content" data-toggle="radio" disabled="">
+    			  	Content
+    			</label>
+    			<label class="radio primary first">
+    				<input type="radio" name="mode" id="modeStyle" value="styling" data-toggle="radio" disabled="">
+    			  	Details
+    			</label>
+    		
+    		</div>
+    	
+    	</header>
+    	
+    	<div class="screen" id="screen">
+    		
+    		<div class="toolbar">
+    		
+    			<div class="buttons clearfix">
+    				<span class="left red"></span>
+    				<span class="left yellow"></span>
+    				<span class="left green"></span>
+    			</div>
+    			
+    			<div class="title" id="pageTitle">
+    				<span><span>index</span>.html</span>
+    			</div>
+    			
+    		</div>
+    		
+    		<div id="frameWrapper" class="frameWrapper empty">
+    			<div id="pageList">
+    				<ul style="display: block;" id="page1"></ul>
+    			</div>
+    			<div class="start" id="start">
+    				<span>Build your page by dragging elements onto the canvas</span>
+    			</div>
+    		</div>
+    	
+    	</div><!-- /.screen -->
+    	
+    </div><!-- /.container -->
+    
+    <div id="styleEditor" class="styleEditor">
+    
+    	<a href="#" class="close"><span class="fui-cross-inverted"></span></a>
+    	
+    	<h3><span class="fui-new"></span> Detail Editor</h3>
+    	
+    	<ul class="breadcrumb">
+    		<li>Editing:</li>
+ 			<li class="active" id="editingElement">p</li>
+ 		</ul>
+ 		
+ 		<ul class="nav nav-tabs" id="detailTabs">
+ 			<li class="active"><a href="#tab1"><span class="fui-new"></span> Style</a></li>
+ 		  	<li style="display: none;"><a href="#link_Tab" id="link_Link"><span class="fui-clip"></span> Link</a></li>
+ 		  	<li style="display: none;"><a href="#image_Tab" id="img_Link"><span class="fui-image"></span> Image</a></li>
+ 		  	<li style="display: none;"><a href="#icon_Tab" id="icon_Link"><span class="fa fa-flag"></span> Icons</a></li>
+ 		  	<li style="display: none;"><a href="#video_Tab" id="video_Link"><span class="fa fa-youtube-play"></span> Video</a></li>
+ 		</ul><!-- /tabs -->
+    	
+    	<div class="tab-content">
+    	
+   			<div class="tab-pane active" id="tab1">
+ 				
+ 				<form class="" role="form" id="stylingForm">
+ 				
+ 					<div id="styleElements">
+ 				
+ 				  		<div class="form-group clearfix" style="display: none;" id="styleElTemplate">
+ 				  			<label for="" class="control-label"></label>
+ 				      		<input type="text" class="form-control input-sm" id="" placeholder="">
+ 				  		</div>
+ 				  	
+ 				  	</div>
+ 				  
+ 				</form>
+ 				
+ 			</div>
+    	
+			<!-- /tabs -->
+ 			<div class="tab-pane link_Tab" id="link_Tab">
+   				
+   				<select id="internalLinksDropdown">
+   					<option value="#">Choose a page</option>
+   					<option value="index.html">index</option>
+   				</select>
+   				
+   				<p class="text-center or">
+   					<span>OR</span>
+   				</p>
+   				
+   				<select id="pageLinksDropdown">
+   					<option value="#">Choose a block (one page sites)</option>
+   				</select>
+   				
+   				<p class="text-center or">
+   					<span>OR</span>
+   				</p>
+   				
+   				<input type="text" class="form-control" id="internalLinksCustom" placeholder="http://somewhere.com/somepage" value="">
+   				
+ 			</div>
+    	
+ 			<!-- /tabs -->
+ 			<div class="tab-pane imageFileTab" id="image_Tab">
+   				
+   				<label>Enter image path:</label>
+   				
+   				<input type="text" class="form-control" id="imageURL" placeholder="Enter an image URL" value="">
+   				
+   				<p class="text-center or">
+   					<span>OR</span>
+   				</p>
+   				
+   				<form id="imageUploadForm" action="iupload.php">
+   				
+   					<label>Upload image:</label>
+   				
+   					<div class="form-group">
+   				    	<div class="fileinput fileinput-new" data-provides="fileinput">
+   							<div class="fileinput-preview thumbnail" style="width: 100%; height: 150px;"></div>
+   							<div class="buttons">
+   								<span class="btn btn-primary btn-sm btn-embossed btn-file">
+   									<span class="fileinput-new" data-trigger="fileinput" ><span class="fui-image"></span>&nbsp;&nbsp;Select image</span>
+   									<span class="fileinput-exists"><span class="fui-gear"></span>&nbsp;&nbsp;Change</span>
+   									<input type="file" name="imageFileField" id="imageFileField">
+   								</span>
+   								<a href="#" class="btn btn-default btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>&nbsp;&nbsp;Remove</a>
+   							</div>
+   						</div>
+   					</div>
+   				
+   				</form>
+   				
+ 			</div><!-- /.tab-pane -->
+ 			
+ 			<!-- /tabs -->
+ 			<div class="tab-pane iconTab" id="icon_Tab">
+ 			
+ 				<label>Choose an icon below: </label>
+ 				
+ 				<select id="icons" data-placeholder="Your Favorite Types of Bear">
+          <option value="arrow_up">&#xe03c; arrow_up</option>
+      <option value="arrow_down">&#xe01b; arrow_down</option>
+      <option value="arrow_left">&#xe021; arrow_left</option>
+      <option value="arrow_right">&#xe02a; arrow_right</option>
+      <option value="arrow_left-up">&#xe027; arrow_left-up</option>
+      <option value="arrow_right-up">&#xe02e; arrow_right-up</option>
+      <option value="arrow_right-down">&#xe02c; arrow_right-down</option>
+      <option value="arrow_left-down">&#xe023; arrow_left-down</option>
+      <option value="arrow-up-down">&#xe03e; arrow-up-down</option>
+      <option value="arrow_up-down_alt">&#xe03f; arrow_up-down_alt</option>
+      <option value="arrow_left-right_alt">&#xe026; arrow_left-right_alt</option>
+      <option value="arrow_left-right">&#xe025; arrow_left-right</option>
+      <option value="arrow_expand_alt2">&#xe01f; arrow_expand_alt2</option>
+      <option value="arrow_expand_alt">&#xe020; arrow_expand_alt</option>
+      <option value="arrow_condense">&#xe019; arrow_condense</option>
+      <option value="arrow_expand">&#xe01d; arrow_expand</option>
+      <option value="arrow_move">&#xe029; arrow_move</option>
+      <option value="arrow_carrot-up">&#xe016; arrow_carrot-up</option>
+      <option value="arrow_carrot-down">&#xe00d; arrow_carrot-down</option>
+      <option value="arrow_carrot-left">&#xe010; arrow_carrot-left</option>
+      <option value="arrow_carrot-right">&#xe013; arrow_carrot-right</option>
+      <option value="arrow_carrot-2up">&#xe00b; arrow_carrot-2up</option>
+      <option value="arrow_carrot-2down">&#xe001; arrow_carrot-2down</option>
+      <option value="arrow_carrot-2left">&#xe004; arrow_carrot-2left</option>
+      <option value="arrow_carrot-2right">&#xe007; arrow_carrot-2right</option>
+      <option value="arrow_carrot-up_alt2">&#xe018; arrow_carrot-up_alt2</option>
+      <option value="arrow_carrot-down_alt2">&#xe00f; arrow_carrot-down_alt2</option>
+            <option value="arrow_carrot-left_alt2">&#xe012; arrow_carrot-left_alt2</option>
+      <option value="arrow_carrot-right_alt2">&#xe015; arrow_carrot-right_alt2</option>
+      <option value="arrow_carrot-2up_alt2">&#xe00c; arrow_carrot-2up_alt2</option>
+      <option value="arrow_carrot-2down_alt2">&#xe002; arrow_carrot-2down_alt2</option>
+      <option value="arrow_carrot-2left_alt2">&#xe006; arrow_carrot-2left_alt2</option>
+      <option value="arrow_carrot-2right_alt2">&#xe009; arrow_carrot-2right_alt2</option>
+      <option value="arrow_triangle-up">&#xe039; arrow_triangle-up</option>
+      <option value="arrow_triangle-down">&#xe030; arrow_triangle-down</option>
+      <option value="arrow_triangle-left">&#xe033; arrow_triangle-left</option>
+      <option value="arrow_triangle-right">&#xe036; arrow_triangle-right</option>
+      <option value="arrow_triangle-up_alt2">&#xe03b; arrow_triangle-up_alt2</option>
+      <option value="arrow_triangle-down_alt2">&#xe032; arrow_triangle-down_alt2</option>
+      <option value="arrow_triangle-left_alt2">&#xe035; arrow_triangle-left_alt2</option>
+      <option value="arrow_triangle-right_alt2">&#xe038; arrow_triangle-right_alt2</option>
+      <option value="arrow_back">&#xe000; arrow_back</option>
+      <option value="icon_minus-06">&#xe0ce; icon_minus-06</option>
+      <option value="icon_plus">&#xe0e7; icon_plus</option>
+      <option value="icon_close">&#xe062; icon_close</option>
+      <option value="icon_check">&#xe05a; icon_check</option>
+      <option value="icon_minus_alt2">&#xe0d0; icon_minus_alt2</option>
+      <option value="icon_plus_alt2">&#xe0e9; icon_plus_alt2</option>
+      <option value="icon_close_alt2">&#xe064; icon_close_alt2</option>
+      <option value="icon_check_alt2">&#xe05c; icon_check_alt2</option>
+      <option value="icon_zoom-out_alt">&#xe122; icon_zoom-out_alt</option>
+      <option value="icon_zoom-in_alt">&#xe120; icon_zoom-in_alt</option>
+      <option value="icon_search">&#xe0fc; icon_search</option>
+      <option value="icon_box-empty">&#xe04b; icon_box-empty</option>
+      <option value="icon_box-selected">&#xe04c; icon_box-selected</option>
+      <option value="icon_minus-box">&#xe0d1; icon_minus-box</option>
+      <option value="icon_plus-box">&#xe0ea; icon_plus-box</option>
+      <option value="icon_box-checked">&#xe04a; icon_box-checked</option>
+      <option value="icon_circle-empty">&#xe05d; icon_circle-empty</option>
+      <option value="icon_circle-slelected">&#xe05e; icon_circle-slelected</option>
+      <option value="icon_stop_alt2">&#xe107; icon_stop_alt2</option>
+      <option value="icon_stop">&#xe105; icon_stop</option>
+      <option value="icon_pause_alt2">&#xe0da; icon_pause_alt2</option>
+      <option value="icon_pause">&#xe0d8; icon_pause</option>
+      <option value="icon_menu">&#xe0c7; icon_menu</option>
+      <option value="icon_menu-square_alt2">&#xe0cb; icon_menu-square_alt2</option>
+      <option value="icon_menu-circle_alt2">&#xe0c9; icon_menu-circle_alt2</option>
+      <option value="icon_ul">&#xe115; icon_ul</option>
+      <option value="icon_ol">&#xe0d6; icon_ol</option>
+      <option value="icon_adjust-horiz">&#xe040; icon_adjust-horiz</option>
+      <option value="icon_adjust-vert">&#xe041; icon_adjust-vert</option>
+      <option value="icon_document_alt">&#xe080; icon_document_alt</option>
+      <option value="icon_documents_alt">&#xe082; icon_documents_alt</option>
+      <option value="icon_pencil">&#xe0db; icon_pencil</option>
+      <option value="icon_pencil-edit_alt">&#xe0de; icon_pencil-edit_alt</option>
+      <option value="icon_pencil-edit">&#xe0dd; icon_pencil-edit</option>
+      <option value="icon_folder-alt">&#xe098; icon_folder-alt</option>
+      <option value="icon_folder-open_alt">&#xe09b; icon_folder-open_alt</option>
+      <option value="icon_folder-add_alt">&#xe097; icon_folder-add_alt</option>
+      <option value="icon_info_alt">&#xe0b3; icon_info_alt</option>
+      <option value="icon_error-oct_alt">&#xe08d; icon_error-oct_alt</option>
+      <option value="icon_error-circle_alt">&#xe08b; icon_error-circle_alt</option>
+      <option value="icon_error-triangle_alt">&#xe08f; icon_error-triangle_alt</option>
+      <option value="icon_question_alt2">&#xe0f4; icon_question_alt2</option>
+      <option value="icon_question">&#xe0f2; icon_question</option>
+      <option value="icon_comment_alt">&#xe06e; icon_comment_alt</option>
+      <option value="icon_chat_alt">&#xe059; icon_chat_alt</option>
+      <option value="icon_vol-mute_alt">&#xe118; icon_vol-mute_alt</option>
+      <option value="icon_volume-low_alt">&#xe11c; icon_volume-low_alt</option>
+      <option value="icon_volume-high_alt">&#xe11a; icon_volume-high_alt</option>
+      <option value="icon_quotations">&#xe0f5; icon_quotations</option>
+      <option value="icon_quotations_alt2">&#xe0f7; icon_quotations_alt2</option>
+      <option value="icon_clock_alt">&#xe061; icon_clock_alt</option>
+      <option value="icon_lock_alt">&#xe0c0; icon_lock_alt</option>
+      <option value="icon_lock-open_alt">&#xe0c2; icon_lock-open_alt</option>
+      <option value="icon_key_alt">&#xe0b5; icon_key_alt</option>
+      <option value="icon_cloud_alt">&#xe066; icon_cloud_alt</option>
+      <option value="icon_cloud-upload_alt">&#xe06a; icon_cloud-upload_alt</option>
+      <option value="icon_cloud-download_alt">&#xe068; icon_cloud-download_alt</option>
+      <option value="icon_image">&#xe0b0; icon_image</option>
+      <option value="icon_images">&#xe0b1; icon_images</option>
+      <option value="icon_lightbulb_alt">&#xe0b9; icon_lightbulb_alt</option>
+      <option value="icon_gift_alt">&#xe09f; icon_gift_alt</option>
+      <option value="icon_house_alt">&#xe0ab; icon_house_alt</option>
+      <option value="icon_genius">&#xe09d; icon_genius</option>
+      <option value="icon_mobile">&#xe0d2; icon_mobile</option>
+      <option value="icon_tablet">&#xe109; icon_tablet</option>
+      <option value="icon_laptop">&#xe0b6; icon_laptop</option>
+      <option value="icon_desktop">&#xe07c; icon_desktop</option>
+      <option value="icon_camera_alt">&#xe055; icon_camera_alt</option>
+      <option value="icon_mail_alt">&#xe0c4; icon_mail_alt</option>
+      <option value="icon_cone_alt">&#xe072; icon_cone_alt</option>
+      <option value="icon_ribbon_alt">&#xe0fa; icon_ribbon_alt</option>
+      <option value="icon_bag_alt">&#xe045; icon_bag_alt</option>
+      <option value="icon_creditcard">&#xe075; icon_creditcard</option>
+      <option value="icon_cart_alt">&#xe057; icon_cart_alt</option>
+      <option value="icon_paperclip">&#xe0d7; icon_paperclip</option>
+      <option value="icon_tag_alt">&#xe10b; icon_tag_alt</option>
+      <option value="icon_tags_alt">&#xe10d; icon_tags_alt</option>
+      <option value="icon_trash_alt">&#xe114; icon_trash_alt</option>
+      <option value="icon_cursor_alt">&#xe079; icon_cursor_alt</option>
+      <option value="icon_mic_alt">&#xe0cd; icon_mic_alt</option>
+      <option value="icon_compass_alt">&#xe070; icon_compass_alt</option>
+      <option value="icon_pin_alt">&#xe0e6; icon_pin_alt</option>
+      <option value="icon_pushpin_alt">&#xe0ef; icon_pushpin_alt</option>
+      <option value="icon_map_alt">&#xe0c6; icon_map_alt</option>
+      <option value="icon_drawer_alt">&#xe085; icon_drawer_alt</option>
+      <option value="icon_toolbox_alt">&#xe111; icon_toolbox_alt</option>
+      <option value="icon_book_alt">&#xe049; icon_book_alt</option>
+      <option value="icon_calendar">&#xe052; icon_calendar</option>
+      <option value="icon_film">&#xe090; icon_film</option>
+      <option value="icon_table">&#xe108; icon_table</option>
+      <option value="icon_contacts_alt">&#xe074; icon_contacts_alt</option>
+      <option value="icon_headphones">&#xe0a6; icon_headphones</option>
+      <option value="icon_lifesaver">&#xe0b7; icon_lifesaver</option>
+      <option value="icon_piechart">&#xe0e4; icon_piechart</option>
+      <option value="icon_refresh">&#xe0f8; icon_refresh</option>
+      <option value="icon_link_alt">&#xe0bd; icon_link_alt</option>
+      <option value="icon_link">&#xe0bc; icon_link</option>
+      <option value="icon_loading">&#xe0be; icon_loading</option>
+      <option value="icon_blocked">&#xe047; icon_blocked</option>
+      <option value="icon_archive_alt">&#xe043; icon_archive_alt</option>
+      <option value="icon_heart_alt">&#xe0a8; icon_heart_alt</option>
+      <option value="icon_star_alt">&#xe102; icon_star_alt</option>
+      <option value="icon_star-half_alt">&#xe104; icon_star-half_alt</option>
+      <option value="icon_star">&#xe101; icon_star</option>
+      <option value="icon_star-half">&#xe103; icon_star-half</option>
+      <option value="icon_tools">&#xe112; icon_tools</option>
+      <option value="icon_tool">&#xe10f; icon_tool</option>
+      <option value="icon_cog">&#xe06b; icon_cog</option>
+      <option value="icon_cogs">&#xe06c; icon_cogs</option>
+      <option value="arrow_up_alt">&#xe03d; arrow_up_alt</option>
+      <option value="arrow_down_alt">&#xe01c; arrow_down_alt</option>
+      <option value="arrow_left_alt">&#xe022; arrow_left_alt</option>
+      <option value="arrow_right_alt">&#xe02b; arrow_right_alt</option>
+      <option value="arrow_left-up_alt">&#xe028; arrow_left-up_alt</option>
+      <option value="arrow_right-up_alt">&#xe02f; arrow_right-up_alt</option>
+      <option value="arrow_right-down_alt">&#xe02d; arrow_right-down_alt</option>
+      <option value="arrow_left-down_alt">&#xe024; arrow_left-down_alt</option>
+      <option value="arrow_condense_alt">&#xe01a; arrow_condense_alt</option>
+      <option value="arrow_expand_alt3">&#xe020; arrow_expand_alt3</option>
+      <option value="arrow_carrot_up_alt">&#xe017; arrow_carrot_up_alt</option>
+      <option value="arrow_carrot-down_alt">&#xe00e; arrow_carrot-down_alt</option>
+      <option value="arrow_carrot-left_alt">&#xe011; arrow_carrot-left_alt</option>
+      <option value="arrow_carrot-right_alt">&#xe014; arrow_carrot-right_alt</option>
+      <option value="arrow_carrot-2up_alt">&#xe00b; arrow_carrot-2up_alt</option>
+      <option value="arrow_carrot-2dwnn_alt">&#xe003; arrow_carrot-2dwnn_alt</option>
+      <option value="arrow_carrot-2left_alt">&#xe005; arrow_carrot-2left_alt</option>
+      <option value="arrow_carrot-2right_alt">&#xe008; arrow_carrot-2right_alt</option>
+      <option value="arrow_triangle-up_alt">&#xe03a; arrow_triangle-up_alt</option>
+      <option value="arrow_triangle-down_alt">&#xe031; arrow_triangle-down_alt</option>
+      <option value="arrow_triangle-left_alt">&#xe034; arrow_triangle-left_alt</option>
+      <option value="arrow_triangle-right_alt">&#xe037; arrow_triangle-right_alt</option>
+      <option value="icon_minus_alt">&#xe0cf; icon_minus_alt</option>
+      <option value="icon_plus_alt">&#xe0e8; icon_plus_alt</option>
+      <option value="icon_close_alt">&#xe063; icon_close_alt</option>
+      <option value="icon_check_alt">&#xe05b; icon_check_alt</option>
+      <option value="icon_zoom-out">&#xe121; icon_zoom-out</option>
+      <option value="icon_zoom-in">&#xe11f; icon_zoom-in</option>
+      <option value="icon_stop_alt">&#xe106; icon_stop_alt</option>
+      <option value="icon_menu-square_alt">&#xe0ca; icon_menu-square_alt</option>
+      <option value="icon_menu-circle_alt">&#xe0c8; icon_menu-circle_alt</option>
+      <option value="icon_document">&#xe07f; icon_document</option>
+      <option value="icon_documents">&#xe081; icon_documents</option>
+      <option value="icon_pencil_alt">&#xe0dc; icon_pencil_alt</option>
+      <option value="icon_folder">&#xe095; icon_folder</option>
+      <option value="icon_folder-open">&#xe09a; icon_folder-open</option>
+      <option value="icon_folder-add">&#xe096; icon_folder-add</option>
+      <option value="icon_folder_upload">&#xe09c; icon_folder_upload</option>
+      <option value="icon_folder_download">&#xe099; icon_folder_download</option>
+      <option value="icon_info">&#xe0b2; icon_info</option>
+      <option value="icon_error-circle">&#xe08a; icon_error-circle</option>
+      <option value="icon_error-oct">&#xe08c; icon_error-oct</option>
+      <option value="icon_error-triangle">&#xe08e; icon_error-triangle</option>
+      <option value="icon_question_alt">&#xe0f3; icon_question_alt</option>
+      <option value="icon_comment">&#xe06d; icon_comment</option>
+      <option value="icon_chat">&#xe058; icon_chat</option>
+      <option value="icon_vol-mute">&#xe117; icon_vol-mute</option>
+      <option value="icon_volume-low">&#xe11b; icon_volume-low</option>
+      <option value="icon_volume-high">&#xe119; icon_volume-high</option>
+      <option value="icon_quotations_alt">&#xe0f6; icon_quotations_alt</option>
+      <option value="icon_clock">&#xe060; icon_clock</option>
+      <option value="icon_lock">&#xe0bf; icon_lock</option>
+      <option value="icon_lock-open">&#xe0c1; icon_lock-open</option>
+      <option value="icon_key">&#xe0b4; icon_key</option>
+      <option value="icon_cloud">&#xe065; icon_cloud</option>
+      <option value="icon_cloud-upload">&#xe069; icon_cloud-upload</option>
+      <option value="icon_cloud-download">&#xe067; icon_cloud-download</option>
+      <option value="icon_lightbulb">&#xe0b8; icon_lightbulb</option>
+      <option value="icon_gift">&#xe09e; icon_gift</option>
+      <option value="icon_house">&#xe0aa; icon_house</option>
+      <option value="icon_camera">&#xe054; icon_camera</option>
+      <option value="icon_mail">&#xe0c3; icon_mail</option>
+      <option value="icon_cone">&#xe071; icon_cone</option>
+      <option value="icon_ribbon">&#xe0f9; icon_ribbon</option>
+      <option value="icon_bag">&#xe044; icon_bag</option>
+      <option value="icon_cart">&#xe056; icon_cart</option>
+      <option value="icon_tag">&#xe10a; icon_tag</option>
+      <option value="icon_tags">&#xe10c; icon_tags</option>
+      <option value="icon_trash">&#xe113; icon_trash</option>
+      <option value="icon_cursor">&#xe078; icon_cursor</option>
+      <option value="icon_mic">&#xe0cc; icon_mic</option>
+      <option value="icon_compass">&#xe06f; icon_compass</option>
+      <option value="icon_pin">&#xe0e5; icon_pin</option>
+      <option value="icon_pushpin">&#xe0ee; icon_pushpin</option>
+      <option value="icon_map">&#xe0c5; icon_map</option>
+      <option value="icon_drawer">&#xe084; icon_drawer</option>
+      <option value="icon_toolbox">&#xe110; icon_toolbox</option>
+      <option value="icon_book">&#xe048; icon_book</option>
+      <option value="icon_contacts">&#xe073; icon_contacts</option>
+      <option value="icon_archive">&#xe042; icon_archive</option>
+      <option value="icon_heart">&#xe0a7; icon_heart</option>
+      <option value="icon_profile">&#xe0ed; icon_profile</option>
+      <option value="icon_group">&#xe0a5; icon_group</option>
+      <option value="icon_grid-2x2">&#xe0a3; icon_grid-2x2</option>
+      <option value="icon_grid-3x3">&#xe0a4; icon_grid-3x3</option>
+      <option value="icon_music">&#xe0d5; icon_music</option>
+      <option value="icon_pause_alt">&#xe0d9; icon_pause_alt</option>
+      <option value="icon_phone">&#xe0e3; icon_phone</option>
+      <option value="icon_upload">&#xe116; icon_upload</option>
+      <option value="icon_download">&#xe083; icon_download</option>
+      <option value="social_facebook">&#xe12f; social_facebook</option>
+      <option value="social_twitter">&#xe15c; social_twitter</option>
+      <option value="social_pinterest">&#xe147; social_pinterest</option>
+      <option value="social_googleplus">&#xe138; social_googleplus</option>
+      <option value="social_tumblr">&#xe159; social_tumblr</option>
+      <option value="social_tumbleupon">&#xe158; social_tumbleupon</option>
+      <option value="social_wordpress">&#xe162; social_wordpress</option>
+      <option value="social_instagram">&#xe13b; social_instagram</option>
+      <option value="social_dribbble">&#xe12c; social_dribbble</option>
+      <option value="social_vimeo">&#xe15f; social_vimeo</option>
+      <option value="social_linkedin">&#xe13e; social_linkedin</option>
+      <option value="social_rss">&#xe14a; social_rss</option>
+      <option value="social_deviantart">&#xe129; social_deviantart</option>
+      <option value="social_share">&#xe14d; social_share</option>
+      <option value="social_myspace">&#xe141; social_myspace</option>
+      <option value="social_skype">&#xe150; social_skype</option>
+      <option value="social_youtube">&#xe165; social_youtube</option>
+      <option value="social_picassa">&#xe144; social_picassa</option>
+      <option value="social_googledrive">&#xe135; social_googledrive</option>
+      <option value="social_flickr">&#xe132; social_flickr</option>
+      <option value="social_blogger">&#xe123; social_blogger</option>
+      <option value="social_spotify">&#xe153; social_spotify</option>
+      <option value="social_delicious">&#xe126; social_delicious</option>
+      <option value="social_facebook_circle">&#xe130; social_facebook_circle</option>
+      <option value="social_twitter_circle">&#xe15d; social_twitter_circle</option>
+      <option value="social_pinterest_circle">&#xe148; social_pinterest_circle</option>
+      <option value="social_googleplus_circle">&#xe139; social_googleplus_circle</option>
+      <option value="social_tumblr_circle">&#xe15a; social_tumblr_circle</option>
+      <option value="social_stumbleupon_circle">&#xe156; social_stumbleupon_circle</option>
+      <option value="social_wordpress_circle">&#xe163; social_wordpress_circle</option>
+      <option value="social_instagram_circle">&#xe13c; social_instagram_circle</option>
+      <option value="social_dribbble_circle">&#xe12d; social_dribbble_circle</option>
+      <option value="social_vimeo_circle">&#xe160; social_vimeo_circle</option>
+      <option value="social_linkedin_circle">&#xe13f; social_linkedin_circle</option>
+      <option value="social_rss_circle">&#xe14b; social_rss_circle</option>
+      <option value="social_deviantart_circle">&#xe12a; social_deviantart_circle</option>
+      <option value="social_share_circle">&#xe14e; social_share_circle</option>
+      <option value="social_myspace_circle">&#xe142; social_myspace_circle</option>
+      <option value="social_skype_circle">&#xe151; social_skype_circle</option>
+      <option value="social_youtube_circle">&#xe166; social_youtube_circle</option>
+      <option value="social_picassa_circle">&#xe145; social_picassa_circle</option>
+      <option value="social_googledrive_alt2">&#xe136; social_googledrive_alt2</option>
+      <option value="social_flickr_circle">&#xe133; social_flickr_circle</option>
+      <option value="social_blogger_circle">&#xe124; social_blogger_circle</option>
+      <option value="social_spotify_circle">&#xe154; social_spotify_circle</option>
+      <option value="social_delicious_circle">&#xe127; social_delicious_circle</option>
+      <option value="social_facebook_square">&#xe131; social_facebook_square</option>
+      <option value="social_twitter_square">&#xe15e; social_twitter_square</option>
+      <option value="social_pinterest_square">&#xe149; social_pinterest_square</option>
+      <option value="social_googleplus_square">&#xe13a; social_googleplus_square</option>
+      <option value="social_tumblr_square">&#xe15b; social_tumblr_square</option>
+      <option value="social_stumbleupon_square">&#xe157; social_stumbleupon_square</option>
+      <option value="social_wordpress_square">&#xe164; social_wordpress_square</option>
+      <option value="social_instagram_square">&#xe13d; social_instagram_square</option>
+      <option value="social_dribbble_square">&#xe12e; social_dribbble_square</option>
+      <option value="social_vimeo_square">&#xe161; social_vimeo_square</option>
+      <option value="social_linkedin_square">&#xe140; social_linkedin_square</option>
+      <option value="social_rss_square">&#xe14c; social_rss_square</option>
+      <option value="social_deviantart_square">&#xe12b; social_deviantart_square</option>
+      <option value="social_share_square">&#xe14f; social_share_square</option>
+      <option value="social_myspace_square">&#xe143; social_myspace_square</option>
+      <option value="social_skype_square">&#xe152; social_skype_square</option>
+      <option value="social_youtube_square">&#xe167; social_youtube_square</option>
+      <option value="social_picassa_square">&#xe146; social_picassa_square</option>
+      <option value="social_googledrive_square">&#xe137; social_googledrive_square</option>
+      <option value="social_flickr_square">&#xe134; social_flickr_square</option>
+      <option value="social_blogger_square">&#xe125; social_blogger_square</option>
+      <option value="social_spotify_square">&#xe155; social_spotify_square</option>
+      <option value="social_delicious_square">&#xe128; social_delicious_square</option>
+      <option value="icon_printer">&#xe0eb; icon_printer</option>
+      <option value="icon_calulator">&#xe053; icon_calulator</option>
+      <option value="icon_building">&#xe04f; icon_building</option>
+      <option value="icon_floppy">&#xe091; icon_floppy</option>
+      <option value="icon_drive">&#xe086; icon_drive</option>
+      <option value="icon_search-2">&#xe0fd; icon_search-2</option>
+      <option value="icon_id">&#xe0ac; icon_id</option>
+      <option value="icon_id-2">&#xe0ad; icon_id-2</option>
+      <option value="icon_puzzle">&#xe0f0; icon_puzzle</option>
+      <option value="icon_like">&#xe0ba; icon_like</option>
+      <option value="icon_dislike">&#xe07d; icon_dislike</option>
+      <option value="icon_mug">&#xe0d3; icon_mug</option>
+      <option value="icon_currency">&#xe076; icon_currency</option>
+      <option value="icon_wallet">&#xe11d; icon_wallet</option>
+      <option value="icon_pens">&#xe0df; icon_pens</option>
+      <option value="icon_easel">&#xe088; icon_easel</option>
+      <option value="icon_flowchart">&#xe093; icon_flowchart</option>
+      <option value="icon_datareport">&#xe07a; icon_datareport</option>
+      <option value="icon_briefcase">&#xe04d; icon_briefcase</option>
+      <option value="icon_shield">&#xe0ff; icon_shield</option>
+      <option value="icon_percent">&#xe0e1; icon_percent</option>
+      <option value="icon_globe">&#xe0a0; icon_globe</option>
+      <option value="icon_globe-2">&#xe0a1; icon_globe-2</option>
+      <option value="icon_target">&#xe10e; icon_target</option>
+      <option value="icon_hourglass">&#xe0a9; icon_hourglass</option>
+      <option value="icon_balance">&#xe046; icon_balance</option>
+      <option value="icon_rook">&#xe0fb; icon_rook</option>
+      <option value="icon_printer-alt">&#xe0ec; icon_printer-alt</option>
+      <option value="icon_calculator_alt">&#xe051; icon_calculator_alt</option>
+      <option value="icon_building_alt">&#xe050; icon_building_alt</option>
+      <option value="icon_floppy_alt">&#xe092; icon_floppy_alt</option>
+      <option value="icon_drive_alt">&#xe087; icon_drive_alt</option>
+      <option value="icon_search_alt">&#xe0fe; icon_search_alt</option>
+      <option value="icon_id_alt">&#xe0af; icon_id_alt</option>
+      <option value="icon_id-2_alt">&#xe0ae; icon_id-2_alt</option>
+      <option value="icon_puzzle_alt">&#xe0f1; icon_puzzle_alt</option>
+      <option value="icon_like_alt">&#xe0bb; icon_like_alt</option>
+      <option value="icon_dislike_alt">&#xe07e; icon_dislike_alt</option>
+      <option value="icon_mug_alt">&#xe0d4; icon_mug_alt</option>
+      <option value="icon_currency_alt">&#xe077; icon_currency_alt</option>
+      <option value="icon_wallet_alt">&#xe11e; icon_wallet_alt</option>
+      <option value="icon_pens_alt">&#xe0e0; icon_pens_alt</option>
+      <option value="icon_easel_alt">&#xe089; icon_easel_alt</option>
+      <option value="icon_flowchart_alt">&#xe094; icon_flowchart_alt</option>
+      <option value="icon_datareport_alt">&#xe07b; icon_datareport_alt</option>
+      <option value="icon_briefcase_alt">&#xe04e; icon_briefcase_alt</option>
+      <option value="icon_shield_alt">&#xe100; icon_shield_alt</option>
+      <option value="icon_percent_alt">&#xe0e2; icon_percent_alt</option>
+      <option value="icon_globe_alt">&#xe0a2; icon_globe_alt</option>
+      <option value="icon_clipboard">&#xe05f; icon_clipboard</option>
+      <option value="icon-app-store">&#xe168; icon-app-store</option>
+      <option value="icon-google-play">&#xe169; icon-google-play</option>
+ 				</select>
+ 				
+ 			</div><!-- /.tab-pane -->
+ 			
+ 			<!-- /tabs -->
+     		<div class="tab-pane videoTab" id="video_Tab">
+       				
+       			<label>Youtube video ID:</label>
+       				
+       			<input type="text" class="form-control margin-bottom-20" id="youtubeID" placeholder="Enter a Youtube video ID" value="">
+       				
+       			<p class="text-center or">
+       				<span>OR</span>
+       			</p>
+       				
+       			<label>Vimeo video ID:</label>
+       				
+       			<input type="text" class="form-control margin-bottom-20" id="vimeoID" placeholder="Enter a Vimeo video ID" value="">
+       				
+     		</div><!-- /.tab-pane -->
+  		
+  		</div> <!-- /tab-content -->
+  		
+  		<div class="alert alert-success" style="display: none;" id="detailsAppliedMessage">
+ 			<button class="close fui-cross" type="button" id="detailsAppliedMessageHide"></button>
+ 			The changes were applied successfully!
+  		</div>
+    	    	
+    	<div class="margin-bottom-5">
+    		<button type="button" class="btn btn-primary btn-embossed btn-sm btn-block" id="saveStyling"><span class="fui-check-inverted"></span> Apply Changes</button>
+    	</div>
+    	
+    	<div class="sideButtons clearfix">
+    		<button type="button" class="btn btn-inverse btn-embossed btn-xs" id="cloneElementButton"><span class="fui-windows"></span> Clone</button>
+    		<button type="button" class="btn btn-warning btn-embossed btn-xs" id="resetStyleButton"><i class="fa fa-refresh"></i> Reset</button>
+    		<button type="button" class="btn btn-danger btn-embossed btn-xs" id="removeElementButton"><span class="fui-cross-inverted"></span> Remove</button>
+    	</div>
+    	
+    	<!--<p class="text-center or">
+    		<span>OR</span>
+    	</p>
+    	
+    	<button type="button" class="btn btn-default btn-embossed btn-block btn-sm" id="closeStyling"><span class="fui-cross-inverted"></span> Close Editor</button>-->
+    	    
+    </div><!-- /.styleEditor -->
+    
+    <div id="hidden">
+    	<iframe src="elements/skeleton.html" id="skeleton"></iframe>
+    </div>
+
+	<!-- modals -->
+	
+	<!-- export HTML popup -->
+	<div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-hidden="true">
+	
+		<!-- 
+		
+		NOTE: 
+		The export PHP files can be hosted on any server supporting PHP, so these files can be hosted on a different location as the BUILDER (this might be easier for your end customers, so they won't have to worry about hosting PHP files)
+		
+		-->
+	
+		<form action="save.php" target="_blank" id="markupForm" method="post" class="form-horizontal">
+		
+		<input type="hidden" name="markup" value="" id="markupField">
+		
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        		<h4 class="modal-title" id="myModalLabel"><span class="fui-export"></span> Export Your Markup</h4>
+	      		</div>
+	      		<div class="modal-body">
+	        		
+	        		<div class="form-group">
+	        		    <label for="inputEmail3" class="col-sm-2 control-label">Doc type</label>
+	        		    <div class="col-sm-10">
+	        		    	<input type="text" class="form-control" name="doctype" id="doctype" placeholder="Doc type" value="<!--DOCTYPE html -->">
+	        		    </div>
+	        		</div>
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="exportCancel">Cancel & Close</button>
+	        		<button type="submit" type="button" class="btn btn-primary btn-embossed" id="exportSubmit">Export Now</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  	
+	  	</form>
+	  	
+	</div><!-- /.modal -->
+
+    <!-- buyTheme Link -->
+    <div class="modal fade small-modal" id="buyTheme" tabindex="-1" role="dialog" aria-hidden="true">
+                    
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                
+                    Do you want to export it? Please purchase the templete first!
+                    
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+                    <a href="" class="btn btn-primary btn-embossed" data-dismiss="modal">Purchase</a>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+                
+    </div><!-- /.modal -->
+
+<!-- export Project popup -->
+<div class="modal fade" id="projModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- 
+  
+  NOTE: 
+  The export PHP files can be hosted on any server supporting PHP, so these files can be hosted on a different location as the BUILDER (this might be easier for your end customers, so they won't have to worry about hosting PHP files)
+  
+-->
+
+<form id="markupForm" class="form-horizontal">
+  
+  
+  
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span class="fa fa-files-o"></span> Export/Import Kane Builder Project</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <p><strong>Export .kanebuilder Project:</strong></p>
+            <div>
+              <a href="#" id="saveProjectPage" class="btn btn-primary btn-embossed"><span class="fa fa-cloud-download"></span>  <span class="bLabel">Export File</span></a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <p><strong>Import .kanebuilder Project:</strong></p>
+              <div>
+                <input type="file" id="projectImport"/>
+              </div>
+              <div style="margin-top:30px;text-align:left;">
+                <a href="#" id="loadProjectPage" class="btn btn-primary btn-embossed"><span class="fa fa-upload"></span>  <span class="bLabel">Import File</span></a>
+              </div>
+          </div>
+        </div>
+
+        <hr>
+        <span class="note">*Note: after the import process all the current landing pages will be deleted!</span>
+
+      </div><!-- /.modal-body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="exportCancel">Cancel & Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+
+</form>
+
+</div><!-- /.modal -->
+	
+	
+	<!-- export HTML popup -->
+	<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-hidden="true">
+	
+		<form action="preview.php" target="_blank" id="markupPreviewForm" method="post" class="form-horizontal">
+		
+		<input type="hidden" name="markup" value="" id="markupField">
+		
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        		<h4 class="modal-title" id="myModalLabel"><span class="fui-window"></span> Preview Page</h4>
+	      		</div>
+	      		<div class="modal-body">
+	        		
+	        		<p>
+						<b>Please note:</b> you can only preview a single page; links to other pages won't work. When you make changes to your page, reloading the preview won't work, instead you'll have to use the "Preview" button again.
+					</p>
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="previewCancel">Cancel & Close</button>
+	        		<button type="submit" type="button" class="btn btn-primary btn-embossed" id="showPreview">Show Preview</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  	
+	  	</form>
+	  	
+	</div><!-- /.modal -->
+	
+	
+	<!-- delete single block popup -->
+	<div class="modal fade small-modal" id="deleteBlock" tabindex="-1" role="dialog" aria-hidden="true">
+					
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			Are you sure you want to delete this block?
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="deleteBlockConfirm">Delete</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+	
+	
+	<!-- reset block popup -->
+	<div class="modal fade small-modal" id="resetBlock" tabindex="-1" role="dialog" aria-hidden="true">
+					
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			<p>
+	      				Are you sure you want to reset this block?
+	      			</p>
+	      			<p>
+	      				All changes made to the content will be destroyed.
+	        		</p>
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="resetBlockConfirm">Reset</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+
+   <!-- stylesheet switch popup -->
+   <div class="modal fade" id="styleSwitch" tabindex="-1" role="dialog" aria-hidden="true">
+               
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+               <h4 class="modal-title" id="myModalLabel"><span class="fui-export"></span> Edit Styles</h4>
+            </div>
+
+            <div class="modal-body">
+
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h6><span class="fui-cmd"></span> Chose Your Color</h6>
+                     <ul class="color-bar">
+                        <li class="blue active" title="Blue"></li>
+                        <li class="blue-munsell" title="Blue Munsell"></li>
+                        <li class="green" title="Green"></li>
+                        <li class="orange" title="Orange"></li>
+                        <li class="purple" title="Purple"></li>
+                        <li class="red" title="Red"></li>
+                        <li class="slate" title="Slate"></li>
+                        <li class="yellow" title="Yellow"></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><!-- /.modal-body -->
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+               <button type="button" class="btn btn-primary btn-embossed" id="styleSwitchConfirm">Make Change</button>
+            </div>
+         </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+            
+   </div><!-- /.modal -->
+	
+	
+	<!-- delete all blocks popup -->
+	<div class="modal fade small-modal" id="deleteAll" tabindex="-1" role="dialog" aria-hidden="true">
+					
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			Are you sure you want to remove this page?
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="deleteAllConfirm">Delete</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+	
+	<!-- delete page popup -->
+	<div class="modal fade small-modal" id="deletePage" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			Are you sure you want to delete this entire page?
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="deletePageCancel">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="deletePageConfirm">Delete</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+	
+	<!-- delete elemnent popup -->
+	<div class="modal fade small-modal" id="deleteElement" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			Are you sure you want to delete this element? Once deleted, it can not be restored.
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="deletePageCancel">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="deleteElementConfirm">Delete</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+	
+	<!-- edit content popup -->
+	<div class="modal fade" id="editContentModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body">
+	      		
+	      			<textarea id="contentToEdit"></textarea>
+	        		
+	      		</div><!-- /.modal-body -->
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+	        		<button type="button" type="button" class="btn btn-primary btn-embossed" id="updateContentInFrameSubmit">Save Content</button>
+	      		</div>
+	    	</div><!-- /.modal-content -->
+	  	</div><!-- /.modal-dialog -->
+	  		  	
+	</div><!-- /.modal -->
+	
+	<div id="loader">
+		<img src="images/loading.gif" alt="Loading...">
+		Loading elements...
+	</div>
+	
+	<div class="sandboxes" id="sandboxes" style="display: none"></div>
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/flatui-checkbox.js"></script>
+    <script src="js/flatui-radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/flatui-fileinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/jquery.zoomer.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/spectrum.js"></script>
+    <script src="js/chosen.jquery.min.js"></script>
+    <script src="js/redactor/redactor.min.js"></script>
+    <script src="js/redactor/table.js"></script>
+    <script src="js/redactor/bufferButtons.js"></script>
+    <script src="js/src-min-noconflict/ace.js"></script>
+    <script src="elements.json"></script>
+    <script src="js/builder.js"></script>
+    <script>
+    
+    $(function(){
+    
+    	var ua = window.navigator.userAgent;
+   		var msie = ua.indexOf("MSIE ");
+    	
+    	/*if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+    			
+    		$('.modes #modeContent').parent().hide();
+    			
+    	} else {
+    			
+    		$('.modes #modeContent').parent().show();
+    		
+    	}*/
+    	
+    	$('#switchTypography').selectpicker({style: 'btn-lg btn-primary', menuStyle: 'dropdown-inverse'});
+    	
+    	
+    })    
+    
+    </script>
+  </body>
+</html>
