@@ -82,19 +82,6 @@ li {
 }
 
 
-/* PRE LOADER */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fefefe;
-    z-index: 99999;
-    height: 100%;
-    width: 100%;
-    overflow: hidden !important;
-}
 
 .status {
     width: 40px;
@@ -112,7 +99,7 @@ li {
 
 
 /*---------------------------------------
-   Typography                
+   Typography
 -----------------------------------------*/
 
 /* FONT FACE LOADER */
@@ -125,7 +112,7 @@ li {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
- 
+
     @font-face {
         font-family: 'Lane';
         src: url('../fonts/lanenar_Lane.svg#Lane') format('svg');
@@ -168,7 +155,7 @@ h5 {
 }
 
 /*---------------------------------------
-   CUSTOM BUTTON              
+   CUSTOM BUTTON
 -----------------------------------------*/
 
 .standard-button,
@@ -200,7 +187,7 @@ h5 {
 
 
 /*---------------------------------------
-   TEXTS               
+   TEXTS
 -----------------------------------------*/
 
 .white-text {
@@ -217,7 +204,7 @@ h5 {
 
 
 /*---------------------------------------
-   SECTIONS          
+   SECTIONS
 -----------------------------------------*/
 
 .section-header {
@@ -237,7 +224,7 @@ h5 {
 }
 
 /*---------------------------------------
-   LINES          
+   LINES
 -----------------------------------------*/
 
 .colored-line {
@@ -265,12 +252,12 @@ h5 {
 
 /*---------------------------------------
 =========================================
- **   SECTION STYLES                
+ **   SECTION STYLES
 =========================================
 -----------------------------------------*/
 
 /*---------------------------------------
-   SECTION:  HOME                 
+   SECTION:  HOME
 -----------------------------------------*/
 
 header .solid-color {
@@ -369,7 +356,7 @@ header .intro-section .buttons {
 }
 
 /*---------------------------------------
-   SECTION:  FEATURES                 
+   SECTION:  FEATURES
 -----------------------------------------*/
 
 .features {
@@ -436,7 +423,7 @@ header .intro-section .buttons {
 
 
 /*---------------------------------------
-   SECTION:  BRIEF                 
+   SECTION:  BRIEF
 -----------------------------------------*/
 
 .app-brief {
@@ -501,7 +488,7 @@ object {
     background: transparent !important;
     margin: auto;
     margin-bottom: 50px;
-    margin-top: 40px; 
+    margin-top: 40px;
 }
 
 .video {
@@ -510,7 +497,7 @@ object {
 
 
 /*---------------------------------------
-   SECTION:  TESTIMONIALS                 
+   SECTION:  TESTIMONIALS
 -----------------------------------------*/
 .testimonials {
     color: #ffffff;
@@ -576,7 +563,7 @@ object {
 
 
 /*---------------------------------------
-   SECTION:  SERVICES           
+   SECTION:  SERVICES
 -----------------------------------------*/
 
 .services {
@@ -600,7 +587,7 @@ object {
 
 
 /*---------------------------------------
-   SECTION:  SCREENSHOTS 
+   SECTION:  SCREENSHOTS
 -----------------------------------------*/
 
 .screenshots {
@@ -624,7 +611,7 @@ object {
 }
 
 /*---------------------------------------
-   SECTION:  PACKAGES | Added on version 1.7      
+   SECTION:  PACKAGES | Added on version 1.7
 -----------------------------------------*/
 
 .packages {
@@ -654,7 +641,7 @@ object {
 
 .single-package .price .color-bg h2 {
     color: #FFFFFF !important;
-} 
+}
 
 .single-package .price .sign {
     vertical-align: super;
@@ -683,7 +670,7 @@ object {
 
 
 /*---------------------------------------
-   SECTION:  DOWNLOAD                 
+   SECTION:  DOWNLOAD
 -----------------------------------------*/
 
 .download {
@@ -713,7 +700,7 @@ object {
     border: 2px solid #FFF;
 }
 
-.download .subscription-form .input-box:focus, 
+.download .subscription-form .input-box:focus,
 .download .subscription-form .input-box:active {
     color: #000;
     font-weight: 400;
@@ -729,7 +716,7 @@ object {
 }
 
 /*---------------------------------------
-   SECTION:  FOOTER                
+   SECTION:  FOOTER
 -----------------------------------------*/
 
 footer .contact-box {
