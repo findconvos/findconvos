@@ -13,11 +13,11 @@ html {
 }
 
 body {
-    background: #232323;
+    background: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #c8c8c8;
+    color: #313131;
     line-height: 28px;
     text-align: center;
     overflow-x: hidden !important;
@@ -61,9 +61,7 @@ a:hover {
     outline: inherit;
 }
 
-textarea:focus, input:focus {
-    color: #ffffff;
-}
+
 /* Other fixes*/
 
 *,
@@ -111,7 +109,6 @@ li {
             background-size: cover;
     margin: -20px 0 0 -20px;
 }
-
 
 /*---------------------------------------
    Typography                
@@ -202,7 +199,7 @@ h5 {
 
 
 /*---------------------------------------
-   TEXTS AND BG               
+   TEXTS               
 -----------------------------------------*/
 
 .white-text {
@@ -213,8 +210,8 @@ h5 {
     color: #272727;
 }
 
-.deep-dark-bg {
-    background: #161616 !important;
+.grey-bg {
+    background: #F7F8FA !important;
 }
 
 
@@ -275,6 +272,11 @@ h5 {
    SECTION:  HOME                 
 -----------------------------------------*/
 
+header {
+    background: url(../images/bg-1.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
 
 header .color-overlay {
     min-height: 900px;
@@ -289,7 +291,7 @@ header .full-screen {
 
 .sticky-navigation {
   min-height: 60px;
-  background: #111111;
+  background: #FFFFFF;
   border: none;
   padding: 0 !important;
   margin-bottom: 0 !important;
@@ -304,7 +306,7 @@ header .full-screen {
 }
 
 .sticky-navigation .main-navigation .current a {
-  color: #FFFFFF;
+  color: #000000 !important;
   position: relative;
   outline: none;
 }
@@ -314,7 +316,15 @@ header .full-screen {
   font-weight: 400;
   font-size: 13px;
   text-transform: uppercase;
-  color: #c8c8c8;
+}
+
+.sticky-navigation .main-navigation li a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-toggle {
+border-color: #313131;
+background: #313131;
 }
 
 header .only-logo .navbar {
@@ -370,7 +380,7 @@ header .intro-section .buttons {
 .features {
     padding-top: 80px;
     padding-bottom: 30px;
-    background: #232323;
+    background: #ffffff;
 }
 
 .features .features-left {
@@ -437,7 +447,6 @@ header .intro-section .buttons {
 .app-brief {
     padding-top: 110px;
     padding-bottom: 60px;
-    background: #222222;
 }
 
 .app-brief h2 {
@@ -482,6 +491,7 @@ header .intro-section .buttons {
 /* VIDEO */
 
 video {
+    max-width: 100%;
     height: auto;
 }
 
@@ -508,6 +518,9 @@ object {
    SECTION:  TESTIMONIALS                 
 -----------------------------------------*/
 .testimonials {
+    background: url(../images/bg-2.jpg) no-repeat center fixed;
+    -webkit-background-size: cover;
+            background-size: cover;
     color: #ffffff;
 }
 
@@ -577,7 +590,7 @@ object {
 .services {
     padding-top: 80px;
     padding-bottom: 60px;
-    background: #222222;
+    background: #ffffff;
 }
 
 .services .single-service {
@@ -604,7 +617,7 @@ object {
 }
 
 .screenshots .shot {
-    background: #232323;
+    background: #FFFFFF;
     padding: 10px;
     margin: 13px;
     border-radius: 4px;
@@ -618,7 +631,6 @@ object {
     width: 100%;
 }
 
-
 /*---------------------------------------
    SECTION:  PACKAGES | Added on version 1.7      
 -----------------------------------------*/
@@ -626,11 +638,11 @@ object {
 .packages {
     padding-top: 80px;
     padding-bottom: 60px;
-    background: #222222;
+    background: #ffffff;
 }
 
 .single-package {
-    background: #161616;
+    background: #F7F8FA;
     overflow: auto;
     border: 0px solid #161616;
     border-radius: 3px;
@@ -638,15 +650,20 @@ object {
 }
 
 .single-package .price {
-    background: #222222;
+    background: #FFFFFF;
 
 }
 .single-package .color-bg {
     background-color: !important;
 }
 .single-package .price h2 {
-    color: #FFFFFF;
+    color: #272727;
 }
+
+.single-package .price .color-bg h2 {
+    color: #FFFFFF !important;
+} 
+
 .single-package .price .sign {
     vertical-align: super;
     font-size: 20px;
@@ -678,6 +695,9 @@ object {
 -----------------------------------------*/
 
 .download {
+    background: url('../images/bg-3.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+            background-size: cover;
     color: #ffffff;
 }
 
@@ -719,13 +739,9 @@ object {
     margin-bottom: 30px;
 }
 
-
 /*---------------------------------------
    SECTION:  FOOTER                
 -----------------------------------------*/
-footer {
-     background: #222222;
-}
 
 footer .contact-box {
     margin-bottom: 78px;
@@ -741,9 +757,9 @@ footer .contact-box .contact-button {
     line-height: 60px;
     vertical-align: middle;
     margin-top: -40px;
-    background: #232323;
-    -webkit-box-shadow: 0px 0px 0px 3px #232323;
-            box-shadow: 0px 0px 0px 3px #232323;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 0px 0px 3px #ffffff;
+            box-shadow: 0px 0px 0px 3px #ffffff;
     -webkit-backface-visibility: hidden;
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding;
@@ -770,8 +786,6 @@ footer .contact-box .expanded-contact-form .input-box {
     height: 50px;
     -webkit-box-shadow: none;
             box-shadow: none;
-    background: #222222;
-    border: 1px solid #161616;
 }
 
 footer .contact-box .expanded-contact-form .textarea-box {
@@ -779,18 +793,15 @@ footer .contact-box .expanded-contact-form .textarea-box {
     margin-bottom: 20px;
     -webkit-box-shadow: none;
             box-shadow: none;
-    background: #222222;
-    border: 1px solid #161616;
 }
 
-footer .contact-box .expanded-contact-form .textarea-box:active,
-footer .contact-box .expanded-contact-form .textarea-box:focus,     {
-    color: #FFF;
+footer .contact-box .expanded-contact-form .textarea-box:active {
+    color: #000;
 }
 
 footer .social-icons {
     margin-top: 30px;
-    border-bottom: 1px solid #111111;
+    border-bottom: 1px solid #e5e5e5;
     padding-bottom: 50px;
 }
 
@@ -801,7 +812,7 @@ footer .social-icons li {
 
 footer .social-icons li a {
     font-size: 30px;
-    color: #636363;
+    color: #c2c2c2;
 }
 
 footer .copyright {
