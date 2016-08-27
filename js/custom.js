@@ -57,7 +57,6 @@ if (matchMedia('(max-width: 480px)').matches) {
     });
 }
 
-
 /* NAVIGATION VISIBLE ON SCROLL */
 
 $(document).ready(function () {
@@ -178,6 +177,7 @@ $(document).ready(function () {
 
 });
 
+
 /* =================================
 ===  SUBSCRIPTION FORM          ====
 =================================== */
@@ -248,21 +248,11 @@ $("#contact").submit(function (e) {
 
 
 
-
 /* =================================
 ===  EXPAND COLLAPSE            ====
 =================================== */
 $('.expand-form').simpleexpand({
     'defaultTarget': '.expanded-contact-form'
-});
-
-
-
-/* =================================
-===  STELLAR                    ====
-=================================== */
-$(window).stellar({ 
-horizontalScrolling: false 
 });
 
 

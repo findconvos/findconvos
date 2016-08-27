@@ -5,7 +5,7 @@ RESPONSIVE FIXES
 -----------------------------------------*/
  
 
- @media (max-width: 1024px) {
+@media (max-width: 1024px) {
 
     .animated {
         -webkit-transform: translateZ(0);
@@ -19,11 +19,7 @@ RESPONSIVE FIXES
         line-height: 26px;
     }
 
-    header {
-        background-attachment: scroll;
-    }
-
-    header .color-overlay {
+    header .solid-color {
         min-height: 800px;
     }
 
@@ -44,7 +40,7 @@ RESPONSIVE FIXES
         font-size: 90%;
     }
 
-    header .color-overlay {
+    header .solid-color {
         min-height: 780px;
     }
 
@@ -100,7 +96,7 @@ RESPONSIVE FIXES
         line-height: 26px;
     }
 
-    header .color-overlay {
+    header .solid-color {
         min-height: 580px;
     }
 
@@ -123,7 +119,6 @@ RESPONSIVE FIXES
         padding-top: 9%;
         text-align: center;
     }
-
 
     .features .features-left,
     .features .features-right {
@@ -160,7 +155,7 @@ RESPONSIVE FIXES
         font-size: 65%;
     }
 
-    header .color-overlay {
+    header .solid-color {
         min-height: 480px;
     }
 
@@ -182,11 +177,6 @@ RESPONSIVE FIXES
 
     header .intro-section .buttons {
         margin-top: 15px;
-    }
-
-    .testimonials, 
-    .download { 
-        background-attachment: inherit !important; 
     }
 
     .download .subscription-form .input-box {
