@@ -256,3 +256,8 @@ footer .copyright {
         display: inline-block;
     }
 }
+@media (max-width: 767px){
+    .explainer {
+        text-align: center;
+    }
+}
