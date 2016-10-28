@@ -78,6 +78,12 @@ body {
     color: #008ed6;
     font-weight: 100;
 }
+.explainer p{
+    font-size: 17px;
+    color: #666;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
 .gray{
     background: #f6f9fc;
     border-top: 1px solid #eee;
@@ -103,8 +109,9 @@ body {
 .benefit{
     padding: 20px 50px;
     color: #666;
-    font-weight: 100;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 17px;
+    letter-spacing: 0.3px;
     text-align: center;
 
 }
@@ -238,6 +245,7 @@ footer .copyright {
     }
     .explainer {
         padding-top: 150px;
+        text-align: left;
     }
     .benefit{
         text-align: left;
@@ -253,10 +261,5 @@ footer .copyright {
     .standard-button{
         margin: 5px;
         display: inline-block;
-    }
-}
-@media (max-width: 767px){
-    .explainer {
-        text-align: center;
     }
 }
